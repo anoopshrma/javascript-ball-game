@@ -12,13 +12,14 @@ function random(min,max) {
   return num;
 }
 function Shape(x, y, velX, velY,exist) {
+//   assiging new coordinates 
   this.x = x;
   this.y = y;
   this.velX = velX;
   this.velY = velY; 
   this.exist=true;
 }
-//bouncy balls
+//bouncy balls main function works over here
 function Ball(x,y,velX,velY,exist,size,color)
 {
 	Shape.call(this,x,y,velX,velY,exist);
@@ -78,6 +79,17 @@ Ball.prototype.collisionDetect = function() {
 
 //Evil CIrcle
 function evilCircle(x,y,exist){
+	Shape.call(this,x,y,exist);
+	this.velX=20;
+	this.velY=20;
+	this.size=10;
+	this.color='white';
+
+}
+
+
+//Evil CIrcle
+function evilCircle2(x,y,exist){
 	Shape.call(this,x,y,exist);
 	this.velX=20;
 	this.velY=20;
